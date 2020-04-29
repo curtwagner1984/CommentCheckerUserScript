@@ -32,7 +32,7 @@ function registerModalButtonsCallbacks(){
         let postIdJquery = jQuery(".modal-content").find(".post_id");
 
         let postId = postIdJquery.html().replace('#','');
-        let threadId = postIdJquery.attr("href").match(/.*?\id=(\d+)/)[1];
+        let threadId = postIdJquery.attr("href").match(/.*?id=(\d+)/)[1];
         let postLink = postIdJquery.attr("href");
         let username = jQuery(".modal-content").find(".user_name a").html();
 
