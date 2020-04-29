@@ -1,0 +1,21 @@
+#progress-bar-lable{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  
+#progress-bar {
+    background: green;
+    z-index: 2;
+    height: 24px;
+    width: 50%;
+    opacity: 1;
+}
+  
+.progress-bar-wrapper {
+background: grey;
+height: 24px;
+text-align: center;
+color: white;
+width: 100%;
+}  
