@@ -2,11 +2,14 @@
 // ==UserScript==
 // @name         EMP Check Helper
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       Curtwagner1984
 // @match        https://www.empornium.me/torrents.php?*action=allcomments
 // @include      https://www.empornium.me/torrents.php?*action=allcomments
+// @include      https://www.empornium.me/requests.php?*action=allcomments
+// @include      https://www.empornium.me/forums.php?*action=allposts*
+// @include      https://www.empornium.me/collages.php*?action=allcomments
 // @updateURL    https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/Main_UserScript.user.js
 // @grant        GM_setValue
 // @grant        GM_getValue
