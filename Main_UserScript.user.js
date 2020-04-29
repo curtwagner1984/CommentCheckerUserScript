@@ -7,6 +7,7 @@
 // @author       Curtwagner1984
 // @match        https://www.empornium.me/torrents.php?*action=allcomments
 // @include      https://www.empornium.me/torrents.php?*action=allcomments
+// @updateURL    https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/Main_UserScript.user.js
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_deleteValue
