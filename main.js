@@ -38,6 +38,7 @@
 
 console.log('main.js loaded...')
 
+var undoArray = [];
 
 function scanCheck(){
     let isScaning = GM_getValue("isScaning");
@@ -48,6 +49,19 @@ function scanCheck(){
     if (isScaning){
         scanPosts();
     }
+
+}
+
+function hidePost(postIdString){
+    jQuery("#" + postIdString).hide();
+    undoArray.push(postIdString)
+    updateProgressBarValue();
+}
+
+function undoHidePost(){
+    let postIdString = undoArray.pop();
+    jQuery("#" + postIdString).show();
+    updateProgressBarValue();
 
 }
 

@@ -49,6 +49,8 @@ function registerButtonsCallbacks(){
 
     // shows the main menue
     jQuery('body').on("click","#main-menu-button",function(){
+        let newestCommentId = parseInt(jQuery("div[id^=post]").first().find(".forum_post .post_id").html().replace("#",''));
+        jQuery("#most-recent-comment-input").val(newestCommentId);
         jQuery(".main-menu-form-popup").show();
     });
 

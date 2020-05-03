@@ -41,8 +41,10 @@ function scanPosts(){
         updateProgressBarValue();
         window.scrollTo(0, 0);
         clearSavedValues();
-        jQuery("#content .thin h2").html("Checking comments: " + oldestComment + " - " + mostRecentComment);
-        jQuery("#quickpost").val("Checked comments "+ oldestComment + " - " + mostRecentComment + " :tick: \n\n")        
+        let numberOfComments = mostRecentComment - oldestComment;
+        let commentString = "" + oldestComment + " - " + mostRecentComment + " (" + numberOfComments + " comments)";
+        jQuery("#content .thin h2").html("Checking comments: " + commentString);
+        jQuery("#quickpost").val("Checked comments "+ commentString +" :tick: \n\n")
 
 
     }else{

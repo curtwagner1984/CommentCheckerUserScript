@@ -12,8 +12,18 @@ function loadStyle(){
 
 function registerPostButtonCallbacks(){        
     jQuery('body').on("click","#added-buttons #comment-ok",function(){
-        jQuery(this).closest("div[id^=post]").hide();
-        updateProgressBarValue();
+        let postIdString = jQuery(this).closest("div[id^=post]").attr("id");
+        hidePost(postIdString);
+        // jQuery(this).closest("div[id^=post]").hide();
+        // updateProgressBarValue();
+    });
+
+    jQuery('body').on("click","#added-buttons #undo-ok",function(){
+        undoHidePost();
+        // let postIdString = jQuery(this).closest("div[id^=post]").attr("id");
+        // hidePost(postIdString);
+        // jQuery(this).closest("div[id^=post]").hide();
+        // updateProgressBarValue();
     });
 
     jQuery('body').on("click","#added-buttons #quote-comment",function(){        
