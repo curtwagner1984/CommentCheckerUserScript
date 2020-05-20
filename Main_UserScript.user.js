@@ -24,8 +24,10 @@
 // @resource     progressBarHtml https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/progress-bar/progress-bar-html.html
 // @resource     progressBarStyle https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/progress-bar/progress-bar-style.css
 // @resource     modalHtml https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/modal/modal-html.html
+// @resource     modalSettingsHtml https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/modal/modal-settings-html.html
 // @resource     modalStyle https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/modal/modal-style.css
 // @resource     sandboxHtml https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/sandbox/sandbox-html.html
+// @require      https://userscripts-mirror.org/scripts/source/107941.user.js
 // @require      https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/sandbox/sandbox.js
 // @require      https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/modal/modal.js
 // @require      https://raw.githubusercontent.com/curtwagner1984/CommentCheckerUserScript/master/progress-bar/progress-bar.js
