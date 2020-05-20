@@ -1,8 +1,8 @@
 console.log("added-post-buttons.js loaded...");
 
-function loadStyle(){
+function loadStyle() {
     let buttonStyle = GM_getResourceText("addedPostButtonsStyle");
-    GM_addStyle (buttonStyle);
+    GM_addStyle(buttonStyle);
 }
 
 // let mainMenuHtml = GM_getResourceText("mainMenuHtml");
@@ -10,15 +10,15 @@ function loadStyle(){
 // mainMenuElement.innerHTML = mainMenuHtml;
 // document.body.appendChild(mainMenuElement);
 
-function registerPostButtonCallbacks(){        
-    jQuery('body').on("click","#added-buttons #comment-ok",function(){
+function registerPostButtonCallbacks() {
+    jQuery("body").on("click", "#added-buttons #comment-ok", function () {
         let postIdString = jQuery(this).closest("div[id^=post]").attr("id");
         hidePost(postIdString);
         // jQuery(this).closest("div[id^=post]").hide();
         // updateProgressBarValue();
     });
 
-    jQuery('body').on("click","#added-buttons #undo-ok",function(){
+    jQuery("body").on("click", "#added-buttons #undo-ok", function () {
         undoHidePost();
         // let postIdString = jQuery(this).closest("div[id^=post]").attr("id");
         // hidePost(postIdString);
@@ -26,14 +26,16 @@ function registerPostButtonCallbacks(){
         // updateProgressBarValue();
     });
 
-    jQuery('body').on("click","#added-buttons #quote-comment",function(){        
+    jQuery("body").on("click", "#added-buttons #quote-comment", function () {
+        insertModalHtml();
         let commentHtml = jQuery(this).closest("div[id^=post]").find(".forum_post")[0].outerHTML;
         let cloned = jQuery(this).closest("div[id^=post]").find(".forum_post").clone();
         cloned.find(".smallhead").hide();
         cloned.find(".avatar").hide();
         cloned.find(".sig").hide();
         commentHtml = cloned[0].outerHTML;
-        setModalContent(commentHtml)
+        setModalContent(commentHtml);
+
         jQuery(".quote-comment-modal").show();
 
         // jQuery(this).closest("div[id^=post]").hide();
@@ -41,14 +43,13 @@ function registerPostButtonCallbacks(){
     });
 }
 
-function addButtonsToPosts(){
+function addButtonsToPosts() {
     let buttonsHtml = GM_getResourceText("addedPostButtonsHtml");
     jQuery("div[id^=post]").each(function () {
         jQuery(this).find(".smallhead").find("td").append(buttonsHtml);
     });
-    
+
     registerPostButtonCallbacks();
 }
-
 
 loadStyle();
