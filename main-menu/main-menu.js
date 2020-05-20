@@ -54,9 +54,17 @@ function registerButtonsCallbacks() {
 
     // shows the main menue
     jQuery("body").on("click", "#main-menu-button", function () {
-        let newestCommentId = parseInt(
-            jQuery("div[id^=post]").first().find(".forum_post .post_id").html().replace("#", "")
-        );
+        let newestCommentId = -1;
+        try {
+            newestCommentId = parseInt(
+                jQuery("div[id^=post]").first().find(".forum_post .post_id").html().replace("#", "")
+            );
+        } catch (error) {
+            console.error(
+                `Couldn't find posts on this page... Something is very wrong... Resetting. Btw, caught this error ${error}`
+            );
+            clearSavedValues();
+        }
         jQuery("#most-recent-comment-input").val(newestCommentId);
         jQuery(".main-menu-form-popup").show();
     });
